@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('res_intervention_delete', {'id': res_intervention.id}) }}" onsubmit="return confirm('Vous etes sur de vouloir supprimer cette intervention?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ res_intervention.id) }}">
+    <a class="btn btn-lg btn-info" href="{{ path('res_intervention_index') }}">Retour aux interventions</a>
+    <button class="btn btn-lg btn-danger">Supprimer</button>
+    <a class="btn btn-lg btn-success" href="{{ path('res_intervention_edit', {'id': res_intervention.id}) }}">Modifier</a>
+</form>

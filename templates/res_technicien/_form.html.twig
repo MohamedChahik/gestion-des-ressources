@@ -1,0 +1,25 @@
+<div class="container">
+    {{ form_start(form) }}
+    <div class="form-row bg-dark">
+        <div class="col text-white">
+            {{ form_label(form.nom) }}
+            {{ form_widget(form.nom) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.prenom) }}
+            {{ form_widget(form.prenom) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col text-white">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+    </div>
+    <br>
+    <div class="col text-white">
+        <a href="{{ path('res_technicien_index') }}" class="btn btn-lg btn-primary">Revenir</a>
+        <button class="btn btn-lg btn-success">{{ button_label|default('Valider') }}</button>
+    </div>
+    {{ form_end(form) }}
+</div>

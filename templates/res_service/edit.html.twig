@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ResService{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Modifier le service</h1>
+        <br>
+
+        {{ include('res_service/_form.html.twig', {'button_label': 'Modifier'}) }}
+    </div>
+{% endblock %}

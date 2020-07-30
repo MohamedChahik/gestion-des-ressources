@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}Demandes{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Demandes</h1>
+        <br>
+
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Entreprise</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for res_demande in res_demandes %}
+                <tr>
+                    <td>{{ res_demande.titre }}</td>
+                    <td>{{ res_demande.description }}</td>
+                    <td>{{ res_demande.entreprise }}</td>
+                    <td>
+                        <a href="{{ path('res_demande_show', {'id': res_demande.id}) }}"><i class="fa fa-search"
+                                                                                            style="font-size:26px;"></i></a>
+                        <a href="{{ path('res_demande_edit', {'id': res_demande.id}) }}"><i class="fa fa-pencil-square"
+                                                                                            style="font-size:26px; color:orange"></i></a>
+                        <a href="{{ path('res_demande_delete', {'id': res_demande.id}) }}"><i class="fa fa-minus-square"
+                                                                                              style="font-size:26px;color:red"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-align-left" style="margin-top:15%">
+            <a href="{{ path('res_demande_new') }}" class="button">Effectuer une
+                demande</a>
+        </div>
+        <br>
+    </div>
+{% endblock %}

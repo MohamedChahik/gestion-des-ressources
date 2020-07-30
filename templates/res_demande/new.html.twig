@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ResEntreprise{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Ajout d'une nouvelle demande</h1>
+        <br>
+
+        {{ include('res_demande/_form.html.twig') }}
+    </div>
+{% endblock %}

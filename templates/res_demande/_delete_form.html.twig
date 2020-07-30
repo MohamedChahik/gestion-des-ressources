@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('res_demande_delete', {'id': res_demande.id}) }}" onsubmit="return confirm('Vous etes sur de vouloir supprimer cette demande?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ res_demande.id) }}">
+    <a class="btn btn-lg btn-info" href="{{ path('res_demande_index') }}">Retour aux demandes</a>
+    <button class="btn btn-lg btn-danger">Supprimer</button>
+    <a class="btn btn-lg btn-success" href="{{ path('res_demande_edit', {'id': res_demande.id}) }}">Modifier</a>
+    <a class="btn btn-lg btn-primary" href="{{ path('res_demande_edit', {'id': res_demande.id}) }}">Faire un devis</a>
+</form>

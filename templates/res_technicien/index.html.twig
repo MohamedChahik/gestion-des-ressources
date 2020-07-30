@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Technicien{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <br>
+    <h1 class="text-white">Techniciens</h1>
+    <br>
+
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Interventions</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for res_technicien in res_techniciens %}
+            <tr>
+                <td>{{ res_technicien.nom }}</td>
+                <td>{{ res_technicien.prenom }}</td>
+                <td>{{ res_technicien.email }}</td>
+                <td><a href="#">Voir les interventions</a></td>
+                <td>
+                    <a href="{{ path('res_technicien_show', {'id': res_technicien.id}) }}"><i class="fa fa-search" style="font-size:26px;"></i></a>
+                    <a href="{{ path('res_technicien_edit', {'id': res_technicien.id}) }}"><i class="fa fa-pencil-square" style="font-size:26px; color:orange"></i></a>
+                    <a href="{{ path('res_technicien_delete', {'id': res_technicien.id}) }}"><i class="fa fa-minus-square" style="font-size:26px;color:red"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-align-left">
+        <a href="{{ path('res_technicien_new') }}" type="button" class="btn btn-lg btn-primary">Ajouter</a>
+    </div>
+    <br>
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('res_entreprise_delete', {'id': res_entreprise.id}) }}" onsubmit="return confirm('Vous etes sur de vouloir supprimer cette entreprise?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ res_entreprise.id) }}">
+    <a class="btn btn-lg btn-primary" href="{{ path('res_entreprise_index') }}">Retour aux entreprises</a>
+    <a class="btn btn-lg btn-success" href="{{ path('res_entreprise_edit', {'id': res_entreprise.id}) }}">Modifier</a>
+    <button class="btn btn-lg btn-danger">Supprimer</button>
+</form>

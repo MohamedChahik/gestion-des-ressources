@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Techniciens{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Ajout d'un nouveau technicien</h1>
+        <br>
+
+        {{ include('res_technicien/_form.html.twig') }}
+    </div>
+{% endblock %}

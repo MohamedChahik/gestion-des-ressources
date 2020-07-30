@@ -1,0 +1,40 @@
+
+<div class="container">
+    {{ form_start(form) }}
+    <div class="form-row bg-dark">
+        <div class="col text-white">
+            {{ form_label(form.titre) }}
+            {{ form_widget(form.titre) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col text-white">
+            {{ form_label(form.lieu) }}
+            {{ form_widget(form.lieu) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.date) }}
+            {{ form_widget(form.date) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col text-white">
+            {{ form_label(form.entreprise) }}
+            {{ form_widget(form.entreprise) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.technicien) }}
+            {{ form_widget(form.technicien) }}
+        </div>
+    </div>
+    <br>
+    <div class="col text-white">
+        <a href="{{ path('res_intervention_index') }}" class="btn btn-lg btn-primary">Revenir</a>
+        <button class="btn btn-lg btn-success">{{ button_label|default('Valider') }}</button>
+    </div>
+    {{ form_end(form) }}
+</div>

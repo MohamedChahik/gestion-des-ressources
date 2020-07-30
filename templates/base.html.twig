@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Ressources - {% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/5fa8b69455.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+              rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/css/style.css">
+        <style>
+            html, body {
+                min-height: 100%;
+                height: 100%;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+        </style>
+    {% endblock %}
+
+</head>
+
+<body id="wrapper">
+
+{% block Navigation %}
+    <nav class="navbar navbar-center navbar-expand-lg navbar-dark text-light bg-secondary">
+      <a class="navbar-brand" href="#">
+        <img style="margin-left: 50px;" src="{{ asset('css/images/fnac.png') }}" width="55" height="55">
+      </a>
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+
+                        <a class="nav-link" href="{{ path('res_devis_index') }}"><i class="fa fa-tag"></i> Devis <span
+                                    class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('res_devis_index') }}"><i class="fa fa-angle-double-right"></i> Interventions <span
+                                    class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('res_demande_index') }}"><i class="fa fa-tasks"></i> Demandes <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                           href="{{ path('res_entreprise_index') }}"><i class="fa fa-sitemap"></i> Entreprises <span class="sr-only">(current)</span></a>
+                    </li>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ressources
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{{ path('res_materiel_index') }}">Matériels</a>
+                        <a class="dropdown-item" href="{{ path('res_service_index') }}">Services</a>
+                        <a class="dropdown-item" href="{{ path('res_technicien_index') }}">Techniciens</a>
+                      </div>
+                    </div>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Utilisateurs <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+<section class="features-icons bg-dark text-center" id="middle">
+    {% block body %}
+    {% endblock %}
+</section>
+{% block footer %}
+    <footer id="sticky-footer" class="py-4 bg-secondary text-light">
+        <div class="container text-center bg-secondary">
+            <small>Site créé dans le cadre d'un projet à l'école Iris</small>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>$(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}
+</body>
+</html>

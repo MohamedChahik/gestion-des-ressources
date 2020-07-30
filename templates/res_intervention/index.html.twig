@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demandes{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Interventions</h1>
+        <br>
+
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Lieu</th>
+                <th>Date</th>
+                <th>Entreprise</th>
+                <th>Techniciens</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for res_intervention in res_interventions %}
+                <tr>
+                    <td>{{ res_intervention.titre }}</td>
+                    <td>{{ res_intervention.description }}</td>
+                    <td>{{ res_intervention.lieu }}</td>
+                    <td>{{ res_intervention.date|date('d-m-Y') }}</td>
+                    <td>{{ res_intervention.entreprise }}</td>
+                    <td>Détail techniciens</td>
+                    <td>
+                        <a href="{{ path('res_intervention_show', {'id': res_intervention.id}) }}"><i class="fa fa-search"
+                                                                                            style="font-size:26px;"></i></a>
+                        <a href="{{ path('res_intervention_edit', {'id': res_intervention.id}) }}"><i class="fa fa-pencil-square"
+                                                                                            style="font-size:26px; color:orange"></i></a>
+                        <a href="{{ path('res_intervention_delete', {'id': res_intervention.id}) }}"><i class="fa fa-minus-square"
+                                                                                              style="font-size:26px;color:red"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-align-left">
+            <a href="{{ path('res_intervention_new') }}" type="button" class="btn btn-lg btn-primary">Planifier une intervention</a>
+        </div>
+        <br>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('res_technicien_delete', {'id': res_technicien.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce technicien?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ res_technicien.id) }}">
+    <a class="btn btn-lg btn-primary" href="{{ path('res_technicien_index') }}">Retour aux techniciens</a>
+    <a class="btn btn-lg btn-success" href="{{ path('res_technicien_edit', {'id': res_technicien.id}) }}">Modifier</a>
+    <button class="btn btn-lg btn-danger">Supprimer</button>
+</form>
+

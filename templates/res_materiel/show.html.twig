@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ResMateriel{% endblock %}
+
+{% block body %}
+<div class="container full-height">
+    <br>
+    <h1 class="text-white">Détails du materiel</h1>
+    <br>
+    <table class="table table-dark table-striped">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ res_materiel.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ res_materiel.description }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ res_materiel.type }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ res_materiel.marque }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ res_materiel.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('res_materiel/_delete_form.html.twig') }}
+</div>
+{% endblock %}

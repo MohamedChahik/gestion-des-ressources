@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Devis</h1>
+        <br>
+
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Cout</th>
+                <th>Demande</th>
+                <th>Entreprise</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for res_devi in res_devis %}
+                <tr>
+                    <td>{{ res_devi.titre }}</td>
+                    <td>{{ res_devi.cout }}</td>
+                    <td>{{ res_devi.demande }}</td>
+                    <td>{{ res_devi.entreprise }}</td>
+                    <td>
+                        <a href="{{ path('res_devis_show', {'id': res_devi.id}) }}"><i class="fa fa-search"
+                                                                                            style="font-size:26px;"></i></a>
+                        <a href="{{ path('res_devis_edit', {'id': res_devi.id}) }}"><i class="fa fa-pencil-square"
+                                                                                            style="font-size:26px; color:orange"></i></a>
+                        <a href="{{ path('res_devis_delete', {'id': res_devi.id}) }}"><i class="fa fa-minus-square"
+                                                                                              style="font-size:26px;color:red"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-align-left">
+            <a href="{{ path('res_devis_new') }}" type="button" class="btn btn-lg btn-primary">Nouveau</a>
+        </div>
+        <br>
+    </div>
+{% endblock %}

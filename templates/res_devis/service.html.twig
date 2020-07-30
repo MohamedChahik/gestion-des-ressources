@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block body %}
+    <div class="container full-height">
+        <br>
+        <h1 class="text-white">Détails des services du devis</h1>
+        <br>
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for service in services %}
+                <tr>
+                    <td><a href="{{ path('res_service_show', {'id': service.id}) }}">{{ service.nom }}</a></td>
+                    <td>{{ service.prix }}</td>
+                    <td>{{ service.description }}</td>
+                    <td>{{ service.type }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

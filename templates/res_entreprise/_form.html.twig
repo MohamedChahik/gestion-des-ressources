@@ -1,0 +1,30 @@
+
+<div class="container">
+    {{ form_start(form) }}
+    <div class="form-row bg-dark">
+        <div class="col text-white">
+            {{ form_label(form.nom) }}
+            {{ form_widget(form.nom) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.ville) }}
+            {{ form_widget(form.ville) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col text-white">
+            {{ form_label(form.adresse) }}
+            {{ form_widget(form.adresse) }}
+        </div>
+        <div class="col text-white">
+            {{ form_label(form.code_postal) }}
+            {{ form_widget(form.code_postal) }}
+        </div>
+    </div>
+    <br>
+    <div class="col text-white">
+        <a href="{{ path('res_entreprise_index') }}" class="btn btn-lg btn-primary">Revenir</a>
+        <button class="btn btn-lg btn-success">{{ button_label|default('Valider') }}</button>
+    </div>
+    {{ form_end(form) }}
+</div>
